@@ -23,5 +23,10 @@ namespace KURSOV.RABOTA.KRUCHININA_23_isp_2._1.View
         {
             InitializeComponent();
         }
+
+        private void adopted_dicision_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -20,19 +20,19 @@
             </Grid.RowDefinitions>
             <StackPanel Orientation="Vertical" Grid.Row="0">
                 <Label Content="Введите регистрационный номер" Margin="10 0"/>
-                <TextBox x:Name="decision_id" Margin="10 0" FontSize="16" Text="{}" />
+                <TextBox x:Name="decision_id" Margin="10 0" FontSize="16" Text="{Binding Decision_id}" />
             </StackPanel>
             <StackPanel Orientation="Vertical" Grid.Row="1">
                 <Label Content="Выберите дату регистрации" Margin="10 0"/>
-                <DatePicker x:Name="registration_id" Margin="10 0" FontSize="16" SelectedDate="{Binding BirthDay}"/>
+                <DatePicker x:Name="registration_date" Margin="10 0" FontSize="16" SelectedDate="{Binding Registration}"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Grid.Row="2">
                 <Label Content="Введите тип прошествия" Margin="10 0"/>
-                <TextBox x:Name="dicision_type" Margin="10 0" FontSize="16" Text="{}"/>
+                <TextBox x:Name="dicision_type" Margin="10 0" FontSize="16" Text="{Binding Type}"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Grid.Row="3">
                 <Label Content="Выберите информацию о принятом по прошествию решение" Margin="10 0"/>
-                <ComboBox x:Name="adopted_dicision" Margin="10 0" FontSize="16" Text="{}">
+                <ComboBox x:Name="adopted_dicision" Margin="10 0" FontSize="16" Text="{Binding Adopted_Info}" SelectionChanged="adopted_dicision_SelectionChanged">
                     <TextBlock>отказано в возбуждении дел</TextBlock>
                     <TextBlock>удовлетворено ходатайство о возбуждении уголовного дела (указ-ть регис-нный номер заведенного дела)</TextBlock>
                     <TextBlock>отправлено по территориальному признаку</TextBlock>
@@ -40,11 +40,11 @@
             </StackPanel>
             <StackPanel  Orientation="Vertical" Grid.Row="4">
                 <Label Content="Введите информацию о виновных или подозреваемых" Margin="10 0"/>
-                <TextBox x:Name="criminal_record" Margin="10 0" FontSize="16" Text="{}"/>
+                <TextBox x:Name="criminal_record" Margin="10 0" FontSize="16" Text="{Binding Criminal_Record}"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Grid.Row="5">
                 <Label Content="Введите отношение конкретных лиц к конкретным происшествиям" Margin="10 0"/>
-                <ComboBox x:Name="defendants" Margin="10 0" FontSize="16" Text="{}">
+                <ComboBox x:Name="defendants" Margin="10 0" FontSize="16" Text="{Binding Defendants}">
                     <TextBlock>виновник</TextBlock>
                     <TextBlock>потерпевший</TextBlock>
                     <TextBlock>подозреваемый</TextBlock>

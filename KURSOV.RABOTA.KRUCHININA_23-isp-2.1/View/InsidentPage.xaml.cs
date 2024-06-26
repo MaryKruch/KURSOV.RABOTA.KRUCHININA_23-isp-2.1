@@ -24,7 +24,7 @@ namespace KURSOV.RABOTA.KRUCHININA_23_isp_2._1.View
         public InsidentPage()
         {
             InitializeComponent();
-            DataContext = new incidentViewModel(this);
+            DataContext = new incidentViewModel();
         }
     }
 }
