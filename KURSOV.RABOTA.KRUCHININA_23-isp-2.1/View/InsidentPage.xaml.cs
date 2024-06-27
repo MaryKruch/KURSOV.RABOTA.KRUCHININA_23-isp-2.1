@@ -1,4 +1,5 @@
 ﻿using KURSOV.RABOTA.KRUCHININA_23_isp_2._1.ViewModel;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,11 @@ namespace KURSOV.RABOTA.KRUCHININA_23_isp_2._1.View
         {
             InitializeComponent();
             DataContext = new incidentViewModel();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

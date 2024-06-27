@@ -3,33 +3,39 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KURSOV.RABOTA.KRUCHININA_23_isp_2._1.View"
+        xmlns:local="clr-namespace:KURSOV.RABOTA.KRUCHININA_23_isp_2._1.View" 
+        xmlns:validation="clr-namespace:KURSOV.RABOTA.KRUCHININA_23_isp_2._1.Validation"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
         mc:Ignorable="d"
-        Title="Добавление проишествия"  Height="450" Width="410">
+        Title="Добавление проишествия"  Height="650" Width="510" Background="#90a1f5">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="0.5*"/>
             </Grid.RowDefinitions>
+            
             <StackPanel Orientation="Vertical" Grid.Row="0">
                 <Label Content="Введите регистрационный номер" Margin="10 0"/>
-                <TextBox x:Name="decision_id" Margin="10 0" FontSize="16" Text="{Binding Decision_id}" />
+                <TextBox x:Name="incident_id" Margin="10 0" FontSize="16" Text="{Binding Incidnt_id}" />
             </StackPanel>
+            
             <StackPanel Orientation="Vertical" Grid.Row="1">
                 <Label Content="Выберите дату регистрации" Margin="10 0"/>
-                <DatePicker x:Name="registration_date" Margin="10 0" FontSize="16" SelectedDate="{Binding Registration}"/>
+                <DatePicker x:Name="registration_date" Margin="10 0" FontSize="16" SelectedDate="{Binding Reg_date}"/>
             </StackPanel>
+            
             <StackPanel Orientation="Vertical" Grid.Row="2">
                 <Label Content="Введите тип прошествия" Margin="10 0"/>
                 <TextBox x:Name="dicision_type" Margin="10 0" FontSize="16" Text="{Binding Type}"/>
             </StackPanel>
+
             <StackPanel Orientation="Vertical" Grid.Row="3">
                 <Label Content="Выберите информацию о принятом по прошествию решение" Margin="10 0"/>
                 <ComboBox x:Name="adopted_dicision" Margin="10 0" FontSize="16" Text="{Binding Adopted_Info}" SelectionChanged="adopted_dicision_SelectionChanged">
@@ -38,28 +44,51 @@
                     <TextBlock>отправлено по территориальному признаку</TextBlock>
                 </ComboBox>
             </StackPanel>
-            <StackPanel  Orientation="Vertical" Grid.Row="4">
-                <Label Content="Введите информацию о виновных или подозреваемых" Margin="10 0"/>
-                <TextBox x:Name="criminal_record" Margin="10 0" FontSize="16" Text="{Binding Criminal_Record}"/>
+
+            <StackPanel Grid.Row="4">
+                <Grid x:Name="RegNomer" Visibility="Visible">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Введите регистрационный номер" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Margin="10"/>
+                </Grid>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="Persons" Grid.Column="0"/>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <ComboBox x:Name="Peoples"  DisplayMemberPath="FirstName" SelectedValuePath="FirstName" Grid.Row="0"/>
+                        <ComboBox x:Name="Role" Grid.Row="1">
+                            <TextBlock>Свидетель</TextBlock>
+                            <TextBlock>Подозреваемый</TextBlock>
+                            <TextBlock>Обвиняемый</TextBlock>
+                            <TextBlock>Просто увидел</TextBlock>
+                        </ComboBox>
+                        <Button Grid.Row="2" Click="Button_Click">+</Button>
+                    </Grid>
+                </Grid>
+                
             </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Row="5">
-                <Label Content="Введите отношение конкретных лиц к конкретным происшествиям" Margin="10 0"/>
-                <ComboBox x:Name="defendants" Margin="10 0" FontSize="16" Text="{Binding Defendants}">
-                    <TextBlock>виновник</TextBlock>
-                    <TextBlock>потерпевший</TextBlock>
-                    <TextBlock>подозреваемый</TextBlock>
-                    <TextBlock>свидетель</TextBlock>
-                </ComboBox>
-            </StackPanel>
-            <Grid Grid.Row="7">
+            <Grid Grid.Row="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="57*"/>
                         <ColumnDefinition Width="143*"/>
                         <ColumnDefinition Width="200*"/>
                     </Grid.ColumnDefinitions>
                     <Button Content="Сохранить" Margin="20,10,20,10" Grid.Column="0" Grid.ColumnSpan="2"
-                    Command="{Binding AddCommand}"/>
-                    <Button Content="Отмена" Margin="20,10,20,10" Grid.Column="2"/>
+                    Command="{Binding AddCommand}" Background="#bfa0e8"/>
+                <Button Content="Отмена" Margin="20,10,20,10" Grid.Column="2" Background="#bfa0e8"/>
             </Grid>
         </Grid>
     </Grid>

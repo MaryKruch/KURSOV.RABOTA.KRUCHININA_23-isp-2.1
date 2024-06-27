@@ -41,10 +41,10 @@
                             <ColumnDefinition Width="100"/>
                             <ColumnDefinition Width="50"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Path=Decision_id}" FontSize="20" TextAlignment="Center"/>
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Name}" FontSize="20" TextAlignment="Center"/>
-                        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=}" FontSize="20" TextAlignment="Center"/>
-                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Stipend}" FontSize="20" TextAlignment="Center"/>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Path=Incidnt_id}" FontSize="20" TextAlignment="Center"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Reg_date}" FontSize="20" TextAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=Type}" FontSize="20" TextAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Adopted_Info}" FontSize="20" TextAlignment="Center"/>
 
                     </Grid>
                 </DataTemplate>
@@ -57,9 +57,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Content="Добавить" Command="{Binding AddCommand}" Grid.Row="0" Margin="10"/>
+            <Button Content="Добавить" Command="{Binding AddCommand}" Grid.Row="0" Margin="10" Background="#bfa0e8" Click="Button_Click"/>
             <Button Grid.Column="1" Content="Удалить" Command="{Binding DeleteCommand}"
-                   CommandParameter="{Binding ElementName=StudentContainer, Path=SelectedItem}" Margin="10"/>
+                   CommandParameter="{Binding ElementName=StudentContainer, Path=SelectedItem}" Margin="10" Background="#bfa0e8"/>
         </Grid>
 
     </Grid>

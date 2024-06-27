@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using KURSOV.RABOTA.KRUCHININA_23_isp_2._1.View;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,20 @@ namespace KURSOV.RABOTA.KRUCHININA_23_isp_2._1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            FrameContainer.Navigate(new InsidentPage());
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

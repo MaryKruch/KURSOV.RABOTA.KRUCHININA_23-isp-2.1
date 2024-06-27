@@ -15,13 +15,13 @@ public partial class DatabasekursovContext : DbContext
     {
     }
 
-    public virtual DbSet<Decision> Decisions { get; set; }
+    public  DbSet<Decision> Decisions { get; set; }
 
-    public virtual DbSet<Incident> Incidents { get; set; }
+    public DbSet<Incident> Incidents { get; set; }
 
-    public virtual DbSet<IncidentPerson> IncidentPeople { get; set; }
+    public DbSet<IncidentPerson> IncidentPeople { get; set; }
 
-    public virtual DbSet<Person> People { get; set; }
+    public DbSet<Person> People { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlite("Data Source=C:\\Курсовая Кручинина\\KURSOV.RABOTA.KRUCHININA_23-isp-2.1\\KURSOV.RABOTA.KRUCHININA_23-isp-2.1\\bin\\Debug\\net8.0-windows\\databasekursov.db");

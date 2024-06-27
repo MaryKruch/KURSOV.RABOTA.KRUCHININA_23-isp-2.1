@@ -6,8 +6,17 @@ namespace KURSOV.RABOTA.KRUCHININA_23_isp_2._1.Model;
 
 public partial class IncidentPerson:Base
 {
-    [Key]
-    public int IncidentId { get; set; }
+
+    public int incidentId;
+    public int IncidentId
+    {
+        get { return incidentId; }
+        set
+        {
+            incidentId = value;
+            OnPropertyChanged(nameof(IncidentId));
+        }
+    }
     private int personid;
     public int PersonId
     {
